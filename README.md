@@ -1,7 +1,7 @@
 # bubbaloop-industrial-edge
 
-> **GSoC 2025 — kornia / Bubbaloop**  
-> A real-world, production-grade Bubbaloop application running on live industrial hardware integrating a Hikrobot smart camera, Siemens S7-1200 PLC, and a full observability dashboard contributed upstream to Bubbaloop.
+> **GSoC 2026 — kornia / Bubbaloop**  
+> A real-world, production-grade Bubbaloop application running on live industrial hardware integrating a Industrial smart camera, Siemens PLC, and a full observability dashboard contributed upstream to Bubbaloop.
 
 ## About Me
 
@@ -23,8 +23,8 @@ The application is an **Industrial Conveyor Belt Automation System** for warehou
 
 | Device | Model | Protocol | Role |
 |--------|-------|----------|------|
-| Smart code reader | Hikrobot MV-ID6200M-00C-NNG | TCP socket + FTP | Captures 20MP images, decodes QR codes at 60/sec |
-| PLC | Siemens S7-1200 | Modbus TCP  | Controls physical conveyor belt motor |
+| Smart code reader | Industrial Camera | TCP socket + FTP | Captures images, decodes QR codes at 60/sec |
+| PLC | Siemens PLC | Modbus TCP  | Controls physical conveyor belt motor |
 | Conveyor belt | Industrial grade | — | Physical goods transport |
 | Edge host | Ubuntu PC (GTX 1650Ti) | — | Runs all Bubbaloop nodes |
 
@@ -35,13 +35,13 @@ The Modbus TCP control logic, FTP image receiver, QR TCP stream parser, and full
 
 The system consists of three main nodes:
 
-### Camera node
+#### Camera node
 Reads QR codes from the Hikrobot camera and publishes scan data
 
-### Validation agent
+#### Validation agent
 Checks if scanned QR count matches expected stack size and detects duplicates
 
-### PLC node
+#### PLC node
 Controls the conveyor by sending commands to the Siemens PLC
 
 If there is any mismatch or duplicate QR, the conveyor is stopped immediately.
