@@ -493,4 +493,4 @@ Edgar Riba · Jian Shi · Luis Ferraz · Miquel Farré
 
 ---
 
-*This repository is part of a Google Summer of Code 2025 proposal. The hardware integration described here is real — I built and maintain the conveyor automation system this project is based on.*
+*This repository is part of a Google Summer of Code 2026 proposal. The hardware integration described here is real — I built and maintain the conveyor automation system this project is based on.*
